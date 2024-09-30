@@ -14,19 +14,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-const devices = [
-    'Desktop',
-    'iPhone 14 Plus',
-    'MacBook Pro',
-    'Apple Watch Series 9',
-    'Thicc SMP',
-    'ThiccSkyblocc',
-    'MySQL',
-    'Raspberry Pi 4',
-]
-
 export default function MenuBar() {
-    const router = useRouter()
+    const { push, replace } = useRouter()
 
     const [time, setTime] = useState<string>('')
     const [date, setDate] = useState<string>('')
@@ -62,12 +51,15 @@ export default function MenuBar() {
                     >
                         <DropdownMenuItem
                             className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'
-                            onClick={() => router.push('/about')}
+                            onClick={() => push('/about')}
                         >
                             About Me
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'>
+                        <DropdownMenuItem
+                            className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'
+                            onClick={() => replace('/logout')}
+                        >
                             Logout
                         </DropdownMenuItem>
                         <DropdownMenuItem className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'>
@@ -78,26 +70,9 @@ export default function MenuBar() {
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
-                <DropdownMenu>
-                    <DropdownMenuTrigger>
-                        <span className='text-3xl'>Devices</span>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                        align='start'
-                        className='font-chicago p-0 rounded-none mt-2 border-4 border-black drop-shadow-[8px_8px_0px_rgba(0,0,0,0.5)]'
-                    >
-                        {devices.map((n, i) => {
-                            return (
-                                <DropdownMenuItem
-                                    key={i}
-                                    className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'
-                                >
-                                    {n}
-                                </DropdownMenuItem>
-                            )
-                        })}
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                <Link href='/devices' className='text-3xl'>
+                    Devices
+                </Link>
                 <Link href='/posts' className='text-3xl'>
                     Posts
                 </Link>

@@ -11,7 +11,7 @@ export default async function About() {
     const content = await markdownToHtml(about_me.content || "");
 
     return (
-        <Window title={"cutiepc"} size={{ height: 500, width: 900 }}>
+        <Window title={"cutiepc"} size={{ height: 700, width: 1200 }}>
             <div 
                 className="px-6 py-4 min-w-full prose"
                 dangerouslySetInnerHTML={{ __html: content }} 

@@ -23,8 +23,8 @@ export default function DesktopFile({ name, img, route }: { name: string, img: a
     }, 5000)
 
     return (
-        <div className={cx('flex flex-col gap-2 justify-center items-center cursor-pointer', state ? 'invert' : '')} onClick={handleClick} onDoubleClick={() => push(route)}>
-            <Image alt="" src={img} />
+        <div className={cx('flex flex-col h-28 gap-2 justify-center items-center cursor-pointer', state ? 'invert' : '')} onClick={handleClick} onDoubleClick={() => push(route)}>
+            <Image alt="" src={img} className="h-12" />
             <span className="bg-white text-lg px-3">{name}</span>
         </div>
     )

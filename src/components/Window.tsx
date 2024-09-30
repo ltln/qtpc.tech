@@ -29,7 +29,7 @@ export default function Window({
     if (!state) return
     return (
         <div
-            className={`bg-white border-4 border-black w-full pb-[37px] ${!state ? 'hidden' : 'visible'}`}
+            className={`bg-white border-4 border-black w-full pb-[37px] z-10 ${!state ? 'hidden' : 'visible'}`}
             style={{ height: size.height, maxWidth: size.width }}
         >
             <div className='relative w-full py-1 border-b-2 border-black'>

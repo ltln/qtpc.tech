@@ -36,3 +36,17 @@ export const postEmpty: Post = {
   size: 0,
   preview: false,
 }
+
+export type Device = {
+  name: string
+  image: string
+  slug: string
+  content: string
+}
+
+export const deviceEmpty: Device = {
+  name: "",
+  image: "",
+  slug: "",
+  content: ""
+}
