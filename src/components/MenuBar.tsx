@@ -26,11 +26,11 @@ const devices = [
 ]
 
 export default function MenuBar() {
-    const router = useRouter();
+    const router = useRouter()
 
     const [time, setTime] = useState<string>('')
     const [date, setDate] = useState<string>('')
-    const [mode, setMode] = useState<boolean>(false);
+    const [mode, setMode] = useState<boolean>(false)
 
     setInterval(() => {
         const currentTime = new Date()
@@ -60,7 +60,10 @@ export default function MenuBar() {
                         align='start'
                         className='font-chicago p-0 rounded-none mt-2 border-4 border-black drop-shadow-[8px_8px_0px_rgba(0,0,0,0.5)]'
                     >
-                        <DropdownMenuItem className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer' onClick={() => router.push("/about")}>
+                        <DropdownMenuItem
+                            className='text-2xl px-4 py-2 rounded-none focus:bg-black hover:bg-black focus:text-white hover:text-white cursor-pointer'
+                            onClick={() => router.push('/about')}
+                        >
                             About Me
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -95,8 +98,12 @@ export default function MenuBar() {
                         })}
                     </DropdownMenuContent>
                 </DropdownMenu>
-                <Link href="/posts" className='text-3xl'>Posts</Link>
-                <Link href="https://status.qtpc.tech" target="_blank" className='text-3xl'>Status</Link>
+                <Link href='/posts' className='text-3xl'>
+                    Posts
+                </Link>
+                <Link href='https://status.qtpc.tech' target='_blank' className='text-3xl'>
+                    Status
+                </Link>
                 <DropdownMenu>
                     <DropdownMenuTrigger>
                         <span className='text-3xl'>Social</span>
@@ -121,17 +128,11 @@ export default function MenuBar() {
                 </DropdownMenu>
             </div>
             <div className='flex items-center cursor-default' onClick={() => setMode(!mode)}>
-            {!mode ? 
-            (
-                <span className='text-2xl'>
-                    {time}
-                </span>
-            ) : (
-                <span className='text-2xl'>
-                    {date}
-                </span>
-            )
-            }  
+                {!mode ? (
+                    <span className='text-2xl'>{time}</span>
+                ) : (
+                    <span className='text-2xl'>{date}</span>
+                )}
             </div>
         </div>
     )

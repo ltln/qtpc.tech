@@ -23,7 +23,7 @@ export default async function About() {
 export async function generateStaticParams() {
     const posts = getAllPosts();
   
-    return posts.map((post) => ({
+    return posts.data.map((post) => ({
       slug: post.slug,
     }));
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function DesktopFile({ name, img, route }: { name: string, img: any, route: string }) {
+export default function DesktopFile({ name, img, route }: { name: string, img: any, route: string }) { // eslint-disable-line
     const [state, setState] = useState<boolean>(false);
     const { push } = useRouter();
 

@@ -3,12 +3,9 @@
 import HardDisk from "@/assets/hard_disk.svg"
 import File from "@/assets/file.svg"
 import Folder from "@/assets/folder.svg"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
 import DesktopFile from "./Files"
 
 export default function DesktopFiles() {
-    const { push } = useRouter();
     return (
         <div className="absolute h-full right-0 font-chicago flex flex-col gap-12 px-8 py-12">
             <DesktopFile name="QTPC HD" img={HardDisk} route="/home" />

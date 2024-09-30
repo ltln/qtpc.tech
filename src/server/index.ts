@@ -19,8 +19,8 @@ const port = _port;
     server.all("*", (req: Request, res: Response) => {
       return handle(req, res);
     });
-
-    server.listen(port, (err?: any) => {
+    
+    server.listen(port, (err?: any) => { // eslint-disable-line
       if (err) throw err;
       console.log(` ○ Ready on http://localhost:${port} [${process.env.NODE_ENV.toUpperCase()}]`);
     });
