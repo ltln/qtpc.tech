@@ -44,6 +44,6 @@ image: /device-image.png # /public folder
 ```
 
 ## To do
-[ ] Website metadata
-[ ] Posts checking tool
-[ ] [Interactive terminal](https://lt.id.vn)
+[] Website metadata
+[] Posts checking tool
+[] [Interactive terminal](https://lt.id.vn)
