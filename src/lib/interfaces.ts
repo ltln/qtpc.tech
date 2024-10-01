@@ -7,7 +7,7 @@ export type Author = {
 export type Post = {
   slug: string;
   title: string;
-  date: string;
+  date: number;
   coverImage: string;
   author: Author;
   excerpt: string;
@@ -22,7 +22,7 @@ export type Post = {
 export const postEmpty: Post = {
   slug: "",
   title: "",
-  date: "0",
+  date: 0,
   coverImage: "",
   author: {
     name: "",

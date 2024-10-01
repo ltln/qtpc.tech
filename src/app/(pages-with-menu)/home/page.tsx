@@ -6,7 +6,7 @@ import { DesktopFile } from "@/components/shared/desktop";
 
 export default function DeviceList() {
     return (
-        <Window title={"QTPC HD"} size={{ height: 700, width: 1200 }}>
+        <Window title={"QTPC HD"}>
             <div className="min-w-full">
                 <div className="flex items-center justify-between h-12 px-6 py-2 text-xl font-chicago border-b-4 border-b-black">
                     <span>4 items</span>

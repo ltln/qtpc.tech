@@ -1,4 +1,4 @@
-import MenuBar from '@/components/MenuBar'
+import { MenuBar } from '@/components/shared/menu'
 import { DesktopFiles } from '@/components/shared/desktop'
 
 export default function Layout({
@@ -7,12 +7,11 @@ export default function Layout({
     children: React.ReactNode
 }>) {
     return (
-        <div className='fixed w-screen h-screen bg-zinc-900 p-4'>
-            <div className='relative w-full h-full pb-16 rounded-3xl'>
+        <div className='fixed w-screen h-screen bg-zinc-800 p-4'>
+            <div id='qtpc' className='relative w-full h-full pb-16 rounded-3xl'>
                 <MenuBar />
                 <div
-                    id='content'
-                    className='relative flex items-center justify-center w-full h-full rounded-b-3xl background-wrap'
+                    className='relative flex items-center justify-center w-full h-full rounded-b-3xl background-wrap px-4'
                 >
                     {children}
                     <DesktopFiles />

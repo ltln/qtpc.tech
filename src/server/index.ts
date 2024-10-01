@@ -1,5 +1,7 @@
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import next from "next";
+import { routes } from "../../resources/routes";
+import { join } from "path";
 
 // get PORT
 const _args = process.argv.slice(2);
@@ -15,6 +17,25 @@ const port = _port;
   try {
     await app.prepare();
     const server = express();
+
+    server.get("/:path", (req: Request, res: Response, next: NextFunction) => {
+      const path = req.originalUrl.replace("/","");
+      const data = routes.find(p => p.path === path);
+      if (data) {
+        if (data.url) {
+          res.status(data.permanent ? 301 : 302).redirect(data.url);
+        } else if (data.asset) {
+          try {
+            const filePath = join(process.cwd(), "public", data.asset);
+            res.sendFile(filePath);
+          } catch {
+            next();
+          }
+        }
+      } else {
+        next();
+      }
+    });
 
     server.all("*", (req: Request, res: Response) => {
       return handle(req, res);

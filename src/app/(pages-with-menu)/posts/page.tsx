@@ -6,12 +6,12 @@ export default function PostList() {
     const allPosts = getAllPosts();
 
     return (
-        <Window title={"Posts List"} size={{ height: 700, width: 1200 }}>
+        <Window title={"Posts List"}>
             <div className="min-w-full">
                 <div className="flex items-center justify-between h-12 px-6 py-2 text-xl font-chicago border-b-4 border-b-black">
                     <span>{allPosts.count} items</span>
-                    <span className="absolute left-1/2 -translate-x-1/2">{allPosts.totalSize}K in folder</span>
-                    <span>{1024 - allPosts.totalSize}K available</span>
+                    <span className="absolute left-1/2 -translate-x-1/2 max-lg:hidden">{allPosts.totalSize}K in folder</span>
+                    <span><span className="lg:hidden">{allPosts.totalSize}K/</span>{1024 - allPosts.totalSize}K <span className="max-lg:hidden">available</span></span>
                 </div>
                 <table className="table-auto w-full">
                     <thead className="border-b-2 border-b-black">
@@ -30,7 +30,7 @@ export default function PostList() {
                             <td className="px-2">{n.title}</td>
                             <td>{n.excerpt}</td>
                             <td className="text-center">{n.author.name}</td>
-                            <td className="px-2">{n.date}</td>
+                            <td className="px-2">{(new Date(n.date * 1000)).toLocaleString()}</td>
                         </tr>
                         </Link>
                         )

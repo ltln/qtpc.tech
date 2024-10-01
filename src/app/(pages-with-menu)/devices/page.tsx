@@ -6,7 +6,7 @@ export default function DeviceList() {
     const allDevices = getAllDevices();
 
     return (
-        <Window title={"Devices List"} size={{ height: 700, width: 1200 }}>
+        <Window title={"Devices List"}>
             <div className="min-w-full">
                 <div className="flex items-center justify-between h-12 px-6 py-2 text-xl font-chicago border-b-4 border-b-black">
                     <span>{allDevices.count} devices</span>
@@ -17,7 +17,6 @@ export default function DeviceList() {
                     return (
                     <Link key={i} href={`/devices/${n.slug}`} legacyBehavior>
                     <div key={i} className="flex flex-col gap-2 items-center justify-start h-28 w-32 group cursor-pointer">
-                        {/* // @next/next/no-img-element */}
                         <img alt="" src={n.image} className="h-12" />
                         <span className="text-center bg-white group-hover:invert">{n.name}</span>
                     </div>

@@ -31,7 +31,7 @@ export default function Logout() {
                     className='relative flex items-center justify-center w-full h-full rounded-3xl background-wrap'
                 >
                 {state ? (
-                    <div className="absolute bg-white border-double border-8 border-black w-1/2 max-h-64 top-1/4 h-full font-chicago text-center pt-16">
+                    <div className="absolute bg-white border-double border-8 border-black w-1/2 max-lg:w-full max-h-64 top-1/4 h-full font-chicago text-center pt-16">
                         <span className="text-lg">Welcome to QuanTrieuPCYT&#39;s website.</span>
                     </div>
                 ) : (

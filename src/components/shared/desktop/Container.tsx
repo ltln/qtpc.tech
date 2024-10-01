@@ -7,7 +7,7 @@ import DesktopFile from "./Files"
 
 export default function DesktopFiles() {
     return (
-        <div className="absolute h-full right-0 font-chicago flex flex-col gap-4 px-8 py-12">
+        <div className="absolute h-full right-0 font-chicago flex flex-col flex-wrap-reverse gap-4 px-8 py-12">
             <DesktopFile name="QTPC HD" img={HardDisk} route="/home" />
             <DesktopFile name="About QTPC" img={File} route="/about" />
             <DesktopFile name="Devices" img={Folder} route="/devices" />

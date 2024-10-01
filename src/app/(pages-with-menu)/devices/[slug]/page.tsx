@@ -12,7 +12,7 @@ export default async function Post({ params }: Params) {
     const content = await markdownToHtml(device.content || "");
 
     return (
-        <Window title={"Post Details"} size={{ height: 700, width: 1200 }}>
+        <Window title={device.name}>
             <div
               className="px-6 py-4 min-w-full prose"
             >

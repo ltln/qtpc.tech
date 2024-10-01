@@ -2,6 +2,7 @@ import Window from "@/components/Window";
 import markdownToHtml from "@/lib/markdown";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default async function Post({ params }: Params) {
@@ -14,15 +15,15 @@ export default async function Post({ params }: Params) {
     const content = await markdownToHtml(post.content || "");
 
     return (
-        <Window title={"Post Details"} size={{ height: 700, width: 1200 }}>
+        <Window title={"Post Details"}>
             <div
               className="px-6 py-4 min-w-full prose"
             >
               <div className="h-48" style={{ background: `url(${post.coverImage}) no-repeat center center`}} />
               <div>
-                <span>{post.date}</span>
+                <span>{(new Date(post.date * 1000)).toLocaleString()}</span>
                 <h1 className="mb-0">{post.title}</h1>
-                <span>{post.author.name}</span>
+                <Link href={post.author.url} target="_blank">{post.author.name}</Link>
               </div>
               <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
